@@ -8,10 +8,15 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
-Version: 07.701.18.00+rc1
+Version: 07.707.50.00+rc1
 Release: 1%{?dist}
 License: GPL
-Source: https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-%{name}/archive?at=07.701.18.00%2brc1&format=tar.gz&prefix=driver-%{name}-07.701.18.00%2brc1#/%{name}.tar.gz
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-avago-megaraid-sas/archive?at=07.707.50.00%2brc1&format=tar.gz&prefix=driver-avago-megaraid-sas-07.707.50.00%2brc1#/avago-megaraid-sas.tar.gz
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-avago-megaraid-sas/archive?at=07.707.50.00%2brc1&format=tar.gz&prefix=driver-avago-megaraid-sas-07.707.50.00%2brc1#/avago-megaraid-sas.tar.gz) = 1f71b34f53bc8af8dcdcfdc24680fb8c7c4ac20c
+
 
 BuildRequires: kernel-devel
 Provides: vendor-driver
@@ -53,3 +58,5 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Mon Feb 25 2019 Thomas Mckelvey <thomas.mckelvey@citrix.com> - 07.707.50.00+rc1-1
+- BRO-229: Update driver version to 07.707.50.00+rc1
