@@ -18,12 +18,12 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
 Version: 07.713.01.00+rc1
-Release: 3%{?xsrel}%{?dist}
+Release: 3%{?xsrel}.0.kernelpreview.1%{?dist}
 License: GPL
 Source0: avago-megaraid-sas.tar.gz
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 %{?_cov_buildrequires}
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
@@ -66,6 +66,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 %{?_cov_results_package}
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 07.713.01.00+rc1-3.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Mon Feb 14 2022 Ross Lagerwall <ross.lagerwall@citrix.com> - 07.713.01.00+rc1-3
 - CP-38416: Enable static analysis
 
