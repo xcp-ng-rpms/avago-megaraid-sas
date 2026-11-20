@@ -18,7 +18,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
 Version: 07.713.01.00+rc1
-Release: 3%{?xsrel}.0.kernelpreview.1%{?dist}
+Release: 3%{?xsrel}.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPL
 Source0: avago-megaraid-sas.tar.gz
 
